@@ -1,1 +1,34 @@
-{"manifest_version":3,"name":"Jamble Gemas - Controle","version":"1.5.0","description":"Coleta com pausa por cronômetro e diagnóstico.","permissions":["storage"],"host_permissions":["https://jamble.com/*","https://*.jamble.com/*"],"content_scripts":[{"matches":["https://jamble.com/*","https://*.jamble.com/*"],"js":["content.js"],"run_at":"document_idle"}],"action":{"default_popup":"popup.html","default_title":"Jamble Gemas"}}
+{
+  "manifest_version": 3,
+  "name": "Jamble Auto Gems",
+  "version": "2.0.1",
+  "description": "Coleta automática com timer, histórico, notificações e múltiplas lives.",
+  "permissions": [
+    "storage",
+    "notifications",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://jamble.com/*",
+    "https://*.jamble.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://jamble.com/*",
+        "https://*.jamble.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Jamble Auto Gems"
+  }
+}
